@@ -32,16 +32,19 @@ final class PlayersViewModel: ObservableObject {
     }
     
     // MARK: - Private
-    
+
     private func fetchPlayers(searchText: String) async {
         currentPage += 1
         
-        let url = urlService.createPlayersURL(
-            searchText: searchText,
-            page: currentPage
-        )
+        let components = urlService.createURLComponents(
+            endpoint: EndPoint.getPlayers(
+                searchText: searchText,
+                page: currentPage
+            ))
         
-        guard let payload: PlayersPayload = await networkService.downloadData(fromURL: url) else { return }
+        guard let payload: PlayersPayload = await networkService.downloadData(components: components) else {
+            return
+        }
         players.append(contentsOf: payload.players)
     }
     
