@@ -27,7 +27,7 @@ enum EndPoint: EndPointProtocol {
     
     case getTeams
     case getGames(teamId: Int, page: Int)
-    case getPlayers
+    case getPlayers(searchText: String, page: Int)
     
     var scheme: HTTPScheme {
         switch self {
@@ -70,11 +70,10 @@ enum EndPoint: EndPointProtocol {
             ]
             return params
             
-            
-        case .getPlayers:
+        case .getPlayers(let searchText, let page):
             let params = [
-                URLQueryItem(name: "search", value: "ilga"),
-                URLQueryItem(name: "page", value: "1")
+                URLQueryItem(name: "search", value: searchText),
+                URLQueryItem(name: "page", value: String(page))
             ]
             return params
         }
