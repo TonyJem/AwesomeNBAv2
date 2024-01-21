@@ -8,6 +8,8 @@ protocol URLServiceProtocol {
     
     func createGamesURL(teamId: Int, page: Int?) -> String
     
+    func createURLComponents(endpoint: EndPointProtocol) -> URLComponents
+    
 }
 
 final class URLService: URLServiceProtocol {
@@ -46,6 +48,15 @@ final class URLService: URLServiceProtocol {
         }
         
         return stringURL
+    }
+    
+    func createURLComponents(endpoint: EndPointProtocol) -> URLComponents {
+        var components = URLComponents()
+        components.scheme = endpoint.scheme.rawValue
+        components.host = endpoint.host
+        components.path = endpoint.path
+        components.queryItems = endpoint.queryItems
+        return components
     }
     
 }

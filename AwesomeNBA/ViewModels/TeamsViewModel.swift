@@ -33,20 +33,11 @@ final class TeamsViewModel: ObservableObject {
     // MARK: - Private
     
     private func fethAllTeams() async {
-        var allTeams: [Team] = []
-        var currentPage = 1
-        var nextPage: Int?
-
-        repeat {
-            let url = urlService.createTeamsURL(page: currentPage)
-            guard let payload: TeamsPayload = await networkService.downloadData(fromURL: url) else {
-                return
-            }
-            allTeams.append(contentsOf: payload.teams)
-            nextPage = payload.pagination.nextPage
-            currentPage += 1
-        } while nextPage != nil
-        teams = allTeams
+        let components = urlService.createURLComponents(endpoint: EndPoint.getTeams)
+        guard let payload: TeamsPayload = await networkService.downloadData(components: components) else {
+            return
+        }
+        teams = payload.teams
     }
     
     private func sortTeams(by option: SortOption) {

@@ -21,6 +21,7 @@
 		C24D55112B5199FF006B38EC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D55102B5199FF006B38EC /* Game.swift */; };
 		C24D55172B51A305006B38EC /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D55162B51A305006B38EC /* PlayersViewModel.swift */; };
 		C24D55192B51A361006B38EC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D55182B51A361006B38EC /* Player.swift */; };
+		C2A181D42B5D5530009F2046 /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A181D32B5D5530009F2046 /* EndPointProtocol.swift */; };
 		C2CA00102B57E9AC00052360 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C2CA000F2B57E9AC00052360 /* Alamofire */; };
 		C2CA00122B57EABE00052360 /* NetworkServiceWithAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA00112B57EABE00052360 /* NetworkServiceWithAlamofire.swift */; };
 		C2CAFF8F2B54086600052360 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF8E2B54086600052360 /* NetworkError.swift */; };
@@ -60,6 +61,7 @@
 		C24D55102B5199FF006B38EC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		C24D55162B51A305006B38EC /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
 		C24D55182B51A361006B38EC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		C2A181D32B5D5530009F2046 /* EndPointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointProtocol.swift; sourceTree = "<group>"; };
 		C2CA00112B57EABE00052360 /* NetworkServiceWithAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceWithAlamofire.swift; sourceTree = "<group>"; };
 		C2CAFF8E2B54086600052360 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C2CAFF912B540AA800052360 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		C24D55122B519E95006B38EC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C2A181D32B5D5530009F2046 /* EndPointProtocol.swift */,
 				C2CAFFD32B55412600052360 /* ServiceProvider.swift */,
 				C2CAFFB32B54505000052360 /* URLService.swift */,
 				C24D550A2B5180E2006B38EC /* NetworkService.swift */,
@@ -350,6 +353,7 @@
 				C2CAFFB42B54505000052360 /* URLService.swift in Sources */,
 				C2CAFFA12B5415AC00052360 /* SortingView.Localized.swift in Sources */,
 				C24D54F72B517FFB006B38EC /* ContentView.swift in Sources */,
+				C2A181D42B5D5530009F2046 /* EndPointProtocol.swift in Sources */,
 				C24D54F52B517FFB006B38EC /* AwesomeNBAApp.swift in Sources */,
 				C2CAFF972B540B8700052360 /* String.swift in Sources */,
 				C2CAFFD82B559E2300052360 /* ColumnHeaderText.swift in Sources */,
