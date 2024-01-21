@@ -26,7 +26,7 @@ var queryItems: [URLQueryItem] { get }
 enum EndPoint: EndPointProtocol {
     
     case getTeams
-    case getGames
+    case getGames(teamId: Int, page: Int)
     case getPlayers
     
     var scheme: HTTPScheme {
@@ -63,10 +63,10 @@ enum EndPoint: EndPointProtocol {
             ]
             return params
             
-        case .getGames:
+        case .getGames(let teamId, let page):
             let params = [
-                URLQueryItem(name: "team_ids[]", value: "1"),
-                URLQueryItem(name: "page", value: "1")
+                URLQueryItem(name: "team_ids[]", value: String(teamId)),
+                URLQueryItem(name: "page", value: String(page))
             ]
             return params
             

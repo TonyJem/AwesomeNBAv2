@@ -12,7 +12,6 @@ final class GamesViewModel: ObservableObject {
     init(
         urlService: URLServiceProtocol,
         networkServiceWithAlamofire: NetworkServiceWithAlamofireProtocol
-        
     ) {
         self.urlService = urlService
         self.networkServiceWithAlamofire = networkServiceWithAlamofire
@@ -34,8 +33,11 @@ final class GamesViewModel: ObservableObject {
     
     private func fetchGamesWithAlamofire(by teamId: Int) {
         currentPage += 1
-        let url = urlService.createGamesURL(teamId: teamId, page: currentPage)
-        networkServiceWithAlamofire.downloadGames(fromURL: url) { [weak self] result in
+        let components = urlService.createURLComponents(
+            endpoint: EndPoint.getGames(teamId: teamId, page: currentPage)
+        )
+        
+        networkServiceWithAlamofire.downloadGames(components: components) { [weak self] result in
             switch result {
             case .success(let payload):
                 self?.games.append(contentsOf: payload.games)
@@ -43,6 +45,7 @@ final class GamesViewModel: ObservableObject {
                 print("🔴 Error: \(error)")
             }
         }
+        
     }
     
 }
