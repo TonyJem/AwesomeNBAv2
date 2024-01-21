@@ -18,15 +18,3 @@ final class URLService: URLServiceProtocol {
     }
     
 }
-
-// - MARK: - EndPoint
-
-extension URLService {
-    
-    enum EndPoint: String {
-        case teams = "teams"
-        case games = "games"
-        case players = "players"
-    }
-    
-}
