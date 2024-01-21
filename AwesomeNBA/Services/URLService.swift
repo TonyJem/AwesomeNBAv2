@@ -2,27 +2,11 @@ import Foundation
 
 protocol URLServiceProtocol {
     
-    func createPlayersURL(searchText: String, page: Int?) -> String
-    
     func createURLComponents(endpoint: EndPointProtocol) -> URLComponents
     
 }
 
 final class URLService: URLServiceProtocol {
-    
-    private let baseURL = "https://www.balldontlie.io/api/v1/"
-    
-    func createPlayersURL(searchText: String, page: Int? = nil) -> String {
-        var stringURL = baseURL + EndPoint.players.rawValue
-        
-        stringURL += "?search=\(searchText.lowercased())"
-        
-        if let page = page {
-            stringURL += "&page=\(page)"
-        }
-        
-        return stringURL
-    }
     
     func createURLComponents(endpoint: EndPointProtocol) -> URLComponents {
         var components = URLComponents()
