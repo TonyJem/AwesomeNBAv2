@@ -36,12 +36,12 @@ class URLService_Tests: XCTestCase {
         let teamId = Int.random(in: 1...999)
         let page = Int.random(in: 1...99)
         
-        // When
         let endPoint = EndPoint.getGames(teamId: teamId, page: page)
         
         let item1 = URLQueryItem(name: "team_ids[]", value: String(teamId))
         let item2 = URLQueryItem(name: "page", value: String(page))
         
+        // When
         let components = urlService.createURLComponents(endpoint: endPoint)
         
         // Then
