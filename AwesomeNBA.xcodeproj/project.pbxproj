@@ -23,6 +23,7 @@
 		C24D55192B51A361006B38EC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D55182B51A361006B38EC /* Player.swift */; };
 		C2A181D42B5D5530009F2046 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A181D32B5D5530009F2046 /* EndPoint.swift */; };
 		C2A1821C2B60EDEB009F2046 /* AwesomeNBA_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1821B2B60EDEB009F2046 /* AwesomeNBA_Tests.swift */; };
+		C2A182232B60EE6F009F2046 /* URLService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A182222B60EE6F009F2046 /* URLService_Tests.swift */; };
 		C2CA00102B57E9AC00052360 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C2CA000F2B57E9AC00052360 /* Alamofire */; };
 		C2CA00122B57EABE00052360 /* NetworkServiceWithAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA00112B57EABE00052360 /* NetworkServiceWithAlamofire.swift */; };
 		C2CAFF8F2B54086600052360 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF8E2B54086600052360 /* NetworkError.swift */; };
@@ -75,6 +76,7 @@
 		C2A181D32B5D5530009F2046 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		C2A182192B60EDEB009F2046 /* AwesomeNBA_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeNBA_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A1821B2B60EDEB009F2046 /* AwesomeNBA_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeNBA_Tests.swift; sourceTree = "<group>"; };
+		C2A182222B60EE6F009F2046 /* URLService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLService_Tests.swift; sourceTree = "<group>"; };
 		C2CA00112B57EABE00052360 /* NetworkServiceWithAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceWithAlamofire.swift; sourceTree = "<group>"; };
 		C2CAFF8E2B54086600052360 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C2CAFF912B540AA800052360 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				C2CAFFB32B54505000052360 /* URLService.swift */,
+				C2A182222B60EE6F009F2046 /* URLService_Tests.swift */,
 			);
 			path = URLService;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2A1821C2B60EDEB009F2046 /* AwesomeNBA_Tests.swift in Sources */,
+				C2A182232B60EE6F009F2046 /* URLService_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
