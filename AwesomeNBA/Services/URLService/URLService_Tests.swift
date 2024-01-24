@@ -50,5 +50,25 @@ class URLService_Tests: XCTestCase {
         XCTAssertEqual(components.path, "/api/v1/games")
         XCTAssertEqual(components.queryItems, [item1, item2])
     }
+    
+    func test_URLService_createURLComponents_With_getPlayersEndpoint_allComponentsShouldBeCorrect() {
+        // Given
+        let page = Int.random(in: 1...99)
+        let searchText = "Ilga"
+        
+        let endPoint = EndPoint.getPlayers(searchText: searchText, page: page)
+        
+        let item1 = URLQueryItem(name: "search", value: searchText)
+        let item2 = URLQueryItem(name: "page", value: String(page))
+        
+        // When
+        let components = urlService.createURLComponents(endpoint: endPoint)
+        
+        // Then
+        XCTAssertEqual(components.scheme, "https")
+        XCTAssertEqual(components.host, "www.balldontlie.io")
+        XCTAssertEqual(components.path, "/api/v1/players")
+        XCTAssertEqual(components.queryItems, [item1, item2])
+    }
 
 }
