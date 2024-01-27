@@ -7,17 +7,14 @@ final class GamesViewModel: ObservableObject {
     private var currentPage = 0
     
     private let urlService: URLServiceProtocol
-    private let networkServiceWithAlamofire: NetworkServiceWithAlamofireProtocol
     
     // TODO: Inject it in init as a dependecy
     private let networkService = NetworkService()
     
     init(
-        urlService: URLServiceProtocol,
-        networkServiceWithAlamofire: NetworkServiceWithAlamofireProtocol
+        urlService: URLServiceProtocol
     ) {
         self.urlService = urlService
-        self.networkServiceWithAlamofire = networkServiceWithAlamofire
     }
     
     // MARK: - Public

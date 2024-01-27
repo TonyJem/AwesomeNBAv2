@@ -25,7 +25,6 @@
 		C2A182232B60EE6F009F2046 /* URLService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A182222B60EE6F009F2046 /* URLService_Tests.swift */; };
 		C2C8483F2B64ED5200758624 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8483E2B64ED5200758624 /* MainView.swift */; };
 		C2CA00102B57E9AC00052360 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C2CA000F2B57E9AC00052360 /* Alamofire */; };
-		C2CA00122B57EABE00052360 /* NetworkServiceWithAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA00112B57EABE00052360 /* NetworkServiceWithAlamofire.swift */; };
 		C2CAFF8F2B54086600052360 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF8E2B54086600052360 /* NetworkError.swift */; };
 		C2CAFF922B540AA800052360 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2CAFF912B540AA800052360 /* Localizable.strings */; };
 		C2CAFF942B540B1500052360 /* LocalizedTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF932B540B1500052360 /* LocalizedTranslations.swift */; };
@@ -77,7 +76,6 @@
 		C2A1821B2B60EDEB009F2046 /* AwesomeNBA_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeNBA_Tests.swift; sourceTree = "<group>"; };
 		C2A182222B60EE6F009F2046 /* URLService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLService_Tests.swift; sourceTree = "<group>"; };
 		C2C8483E2B64ED5200758624 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		C2CA00112B57EABE00052360 /* NetworkServiceWithAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceWithAlamofire.swift; sourceTree = "<group>"; };
 		C2CAFF8E2B54086600052360 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C2CAFF912B540AA800052360 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C2CAFF932B540B1500052360 /* LocalizedTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTranslations.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 				C2A181D32B5D5530009F2046 /* EndPoint.swift */,
 				C2A182142B60EB19009F2046 /* URLService */,
 				C24D550A2B5180E2006B38EC /* NetworkService.swift */,
-				C2CA00112B57EABE00052360 /* NetworkServiceWithAlamofire.swift */,
 				C2CAFF8E2B54086600052360 /* NetworkError.swift */,
 			);
 			path = Services;
@@ -245,8 +242,8 @@
 		C2CAFF982B540D0D00052360 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				C2CAFF992B540D6200052360 /* MainView.Localized.swift */,
 				C2C8483E2B64ED5200758624 /* MainView.swift */,
+				C2CAFF992B540D6200052360 /* MainView.Localized.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -411,7 +408,6 @@
 				C2CAFFA52B5417AC00052360 /* PlayersView.Localized.swift in Sources */,
 				C2CAFFA82B541BAF00052360 /* Images.swift in Sources */,
 				C2C8483F2B64ED5200758624 /* MainView.swift in Sources */,
-				C2CA00122B57EABE00052360 /* NetworkServiceWithAlamofire.swift in Sources */,
 				C24D55172B51A305006B38EC /* PlayersViewModel.swift in Sources */,
 				C24D55192B51A361006B38EC /* Player.swift in Sources */,
 				C2CAFFD62B557BEC00052360 /* TeamsViewCell.swift in Sources */,

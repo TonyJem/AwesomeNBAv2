@@ -15,8 +15,7 @@ struct GamesView: View {
         self.serviceProvider = serviceProvider
         
         _viewModel = StateObject(wrappedValue: GamesViewModel(
-            urlService: serviceProvider.urlService,
-            networkServiceWithAlamofire: serviceProvider.networkServiceWithAlamofire
+            urlService: serviceProvider.urlService
         ))
     }
     
@@ -74,12 +73,10 @@ struct TeamDetails_Previews: PreviewProvider {
     
     static let networkService = NetworkService()
     static let urlService = URLService()
-    static let networkServiceWithAlamofire = NetworkServiceWithAlamofire()
     
     static let serviceProvider = ServiceProvider(
         networkService: networkService,
-        urlService: urlService,
-        networkServiceWithAlamofire: networkServiceWithAlamofire
+        urlService: urlService
     )
     
     static var previews: some View {
