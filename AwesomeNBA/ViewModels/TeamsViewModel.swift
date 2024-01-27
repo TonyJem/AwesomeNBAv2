@@ -4,6 +4,7 @@ import Foundation
 final class TeamsViewModel: ObservableObject {
     
     @Published var teams: [Team] = []
+    @Published var sortOption: SortOption = .byName
     
     private let networkService: NetworkServiceProtocol
     private let urlService: URLServiceProtocol
@@ -18,16 +19,16 @@ final class TeamsViewModel: ObservableObject {
     
     // MARK: - Public
     
-    func loadAllTeams(sorted: SortOption) {
+    func loadSortedTeams() {
         Task {
             await fethAllTeams()
-            sortTeams(by: sorted)
+            sortTeams()
         }
     }
     
-    func refreshData(with sortOption: SortOption) {
+    func refreshData() {
         teams.removeAll()
-        loadAllTeams(sorted: sortOption)
+        loadSortedTeams()
     }
     
     // MARK: - Private
@@ -40,8 +41,8 @@ final class TeamsViewModel: ObservableObject {
         teams = payload.teams
     }
     
-    private func sortTeams(by option: SortOption) {
-        switch option {
+    private func sortTeams() {
+        switch sortOption {
         case .byName:
             sortByName()
         case .byCity:

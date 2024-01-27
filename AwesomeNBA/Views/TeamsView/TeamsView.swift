@@ -1,28 +1,10 @@
 import SwiftUI
 
-enum SortOption {
-    case byName
-    case byCity
-    case byConference
-    
-    var title: String {
-        switch self {
-        case .byName:
-            return L10n.SortOption.byName
-        case .byCity:
-            return L10n.SortOption.byCity
-        case .byConference:
-            return L10n.SortOption.byConference
-        }
-    }
-}
-
 struct TeamsView: View {
     
     @StateObject private var viewModel: TeamsViewModel
     
-    @State var showSortingView = false
-    @State var sortOption: SortOption = .byName
+    @State private var showSortingView = false
     
     private let serviceProvider: ServiceProviderProtocol
     
@@ -53,30 +35,29 @@ struct TeamsView: View {
             }
             .listStyle(.inset)
             .refreshable {
-                viewModel.refreshData(with: sortOption)
+                viewModel.refreshData()
             }
         }
         
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(sortOption.title) {
+                Button(viewModel.sortOption.title) {
                     showSortingView = true
                 }
             }
         }
         .navigationTitle(L10n.TeamsView.navigationTitle)
-        .onChange(of: sortOption) { _ in
-            viewModel.loadAllTeams(sorted: sortOption)
-        }
         .onAppear {
             if viewModel.teams.isEmpty {
-                viewModel.loadAllTeams(sorted: sortOption)
+                viewModel.loadSortedTeams()
             }
         }
         .sheet(isPresented: $showSortingView, content: {
-            SortingView(sortOption: $sortOption)
+            SortingView(sortOption: viewModel.sortOption)
         })
     }
+    
+    // MARK: - Private
     
     private func headerView() -> some View {
         HStack(alignment: .center, spacing: nil) {
@@ -91,62 +72,4 @@ struct TeamsView: View {
         }
     }
     
-}
-
-struct SortingView: View {
-    @Environment(\.presentationMode) var presentationMode
-    
-    var onDismiss: ((_ model: SortOption) -> Void)?
-    
-    @Binding var sortOption: SortOption
-    
-    var body: some View {
-        
-        VStack {
-            Button(action: {
-                sortOption = .byName
-                onDismiss?(sortOption)
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text(L10n.SortingView.byName)
-            })
-            .padding()
-            
-            Button(action: {
-                sortOption = .byCity
-                onDismiss?(sortOption)
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text(L10n.SortingView.byCity)
-            })
-            .padding()
-            
-            Button(action: {
-                sortOption = .byConference
-                onDismiss?(sortOption)
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text(L10n.SortingView.byConference)
-            })
-            .padding()
-            
-        }.padding()
-    }
-}
-
-struct TeamsView_Previews: PreviewProvider {
-    
-    static let networkService = NetworkService()
-    static let urlService = URLService()
-    
-    static let serviceProvider = ServiceProvider(
-        networkService: networkService,
-        urlService: urlService
-    )
-    
-    static var previews: some View {
-        TeamsView(
-            serviceProvider: serviceProvider
-        )
-    }
 }

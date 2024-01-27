@@ -24,6 +24,7 @@
 		C2A1821C2B60EDEB009F2046 /* AwesomeNBA_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1821B2B60EDEB009F2046 /* AwesomeNBA_Tests.swift */; };
 		C2A182232B60EE6F009F2046 /* URLService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A182222B60EE6F009F2046 /* URLService_Tests.swift */; };
 		C2C8483F2B64ED5200758624 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8483E2B64ED5200758624 /* MainView.swift */; };
+		C2C848412B6501BC00758624 /* SortingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C848402B6501BC00758624 /* SortingView.swift */; };
 		C2CA00102B57E9AC00052360 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C2CA000F2B57E9AC00052360 /* Alamofire */; };
 		C2CAFF8F2B54086600052360 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF8E2B54086600052360 /* NetworkError.swift */; };
 		C2CAFF922B540AA800052360 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2CAFF912B540AA800052360 /* Localizable.strings */; };
@@ -31,7 +32,7 @@
 		C2CAFF972B540B8700052360 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF962B540B8700052360 /* String.swift */; };
 		C2CAFF9A2B540D6200052360 /* MainView.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF992B540D6200052360 /* MainView.Localized.swift */; };
 		C2CAFF9D2B540F4600052360 /* TeamsView.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF9C2B540F4600052360 /* TeamsView.Localized.swift */; };
-		C2CAFF9F2B54137B00052360 /* SortOption.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF9E2B54137B00052360 /* SortOption.Localized.swift */; };
+		C2CAFF9F2B54137B00052360 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF9E2B54137B00052360 /* SortOption.swift */; };
 		C2CAFFA12B5415AC00052360 /* SortingView.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFFA02B5415AC00052360 /* SortingView.Localized.swift */; };
 		C2CAFFA52B5417AC00052360 /* PlayersView.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFFA42B5417AC00052360 /* PlayersView.Localized.swift */; };
 		C2CAFFA82B541BAF00052360 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFFA72B541BAF00052360 /* Images.swift */; };
@@ -76,13 +77,14 @@
 		C2A1821B2B60EDEB009F2046 /* AwesomeNBA_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeNBA_Tests.swift; sourceTree = "<group>"; };
 		C2A182222B60EE6F009F2046 /* URLService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLService_Tests.swift; sourceTree = "<group>"; };
 		C2C8483E2B64ED5200758624 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C2C848402B6501BC00758624 /* SortingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingView.swift; sourceTree = "<group>"; };
 		C2CAFF8E2B54086600052360 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C2CAFF912B540AA800052360 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C2CAFF932B540B1500052360 /* LocalizedTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTranslations.swift; sourceTree = "<group>"; };
 		C2CAFF962B540B8700052360 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C2CAFF992B540D6200052360 /* MainView.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.Localized.swift; sourceTree = "<group>"; };
 		C2CAFF9C2B540F4600052360 /* TeamsView.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.Localized.swift; sourceTree = "<group>"; };
-		C2CAFF9E2B54137B00052360 /* SortOption.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.Localized.swift; sourceTree = "<group>"; };
+		C2CAFF9E2B54137B00052360 /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
 		C2CAFFA02B5415AC00052360 /* SortingView.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingView.Localized.swift; sourceTree = "<group>"; };
 		C2CAFFA42B5417AC00052360 /* PlayersView.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.Localized.swift; sourceTree = "<group>"; };
 		C2CAFFA72B541BAF00052360 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -253,8 +255,9 @@
 			children = (
 				C24D55022B518082006B38EC /* TeamsView.swift */,
 				C2CAFFD52B557BEC00052360 /* TeamsViewCell.swift */,
+				C2CAFF9E2B54137B00052360 /* SortOption.swift */,
 				C2CAFF9C2B540F4600052360 /* TeamsView.Localized.swift */,
-				C2CAFF9E2B54137B00052360 /* SortOption.Localized.swift */,
+				C2C848402B6501BC00758624 /* SortingView.swift */,
 				C2CAFFA02B5415AC00052360 /* SortingView.Localized.swift */,
 			);
 			path = TeamsView;
@@ -402,7 +405,7 @@
 				C2CAFF9A2B540D6200052360 /* MainView.Localized.swift in Sources */,
 				C2CAFFD42B55412600052360 /* ServiceProvider.swift in Sources */,
 				C24D55112B5199FF006B38EC /* Game.swift in Sources */,
-				C2CAFF9F2B54137B00052360 /* SortOption.Localized.swift in Sources */,
+				C2CAFF9F2B54137B00052360 /* SortOption.swift in Sources */,
 				C24D55072B5180B7006B38EC /* PlayersView.swift in Sources */,
 				C2CAFF8F2B54086600052360 /* NetworkError.swift in Sources */,
 				C2CAFFA52B5417AC00052360 /* PlayersView.Localized.swift in Sources */,
@@ -427,6 +430,7 @@
 				C24D550F2B5192EC006B38EC /* GamesViewModel.swift in Sources */,
 				C2CAFFDC2B55AD7100052360 /* GamesView.Localized.swift in Sources */,
 				C2CAFFE02B55B1B400052360 /* PlayersViewCell.swift in Sources */,
+				C2C848412B6501BC00758624 /* SortingView.swift in Sources */,
 				C2CAFF942B540B1500052360 /* LocalizedTranslations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
