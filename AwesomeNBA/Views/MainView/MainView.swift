@@ -3,6 +3,7 @@ import SwiftUI
 struct MainView: View {
     
     @StateObject var teamsViewModel: TeamsViewModel
+    @StateObject var playersViewModel: PlayersViewModel
     
     private let serviceProvider: ServiceProviderProtocol
     
@@ -10,6 +11,11 @@ struct MainView: View {
         self.serviceProvider = serviceProvider
         
         _teamsViewModel = StateObject(wrappedValue: TeamsViewModel(
+            networkService: serviceProvider.networkService,
+            urlService: serviceProvider.urlService
+        ))
+        
+        _playersViewModel = StateObject(wrappedValue: PlayersViewModel(
             networkService: serviceProvider.networkService,
             urlService: serviceProvider.urlService
         ))
@@ -32,6 +38,7 @@ struct MainView: View {
             NavigationView {
                 PlayersView(serviceProvider: serviceProvider)
             }
+            .environmentObject(playersViewModel)
             .tabItem {
                 Label(
                     L10n.TabView.playersTabTitle,

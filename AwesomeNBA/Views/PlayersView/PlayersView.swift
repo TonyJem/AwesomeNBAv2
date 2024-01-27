@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PlayersView: View {
     
-    @StateObject private var viewModel: PlayersViewModel
+    @EnvironmentObject private var viewModel: PlayersViewModel
     
     @State private var searchText: String = ""
     
@@ -10,11 +10,6 @@ struct PlayersView: View {
     
     init(serviceProvider: ServiceProviderProtocol) {
         self.serviceProvider = serviceProvider
-        
-        _viewModel = StateObject(wrappedValue: PlayersViewModel(
-            networkService: serviceProvider.networkService,
-            urlService: serviceProvider.urlService
-        ))
     }
     
     var body: some View {

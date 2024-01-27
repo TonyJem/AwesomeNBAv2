@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TeamsView: View {
     
-    @EnvironmentObject var viewModel: TeamsViewModel
+    @EnvironmentObject private var viewModel: TeamsViewModel
     
     @State private var showSortingView = false
     
