@@ -33,7 +33,6 @@ struct TeamsView: View {
                 viewModel.refreshData()
             }
         }
-        
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(viewModel.sortOption.title) {
