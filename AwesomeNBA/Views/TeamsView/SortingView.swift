@@ -7,32 +7,28 @@ struct SortingView: View {
     
     var body: some View {
         VStack {
-            Button(action: {
-                viewModel.change(sortOption: .byName)
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text(L10n.SortingView.byName)
-            })
+            sortButton(sortOption: .byName)
             .padding()
             
-            Button(action: {
-                viewModel.change(sortOption: .byCity)
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text(L10n.SortingView.byCity)
-            })
+            sortButton(sortOption: .byCity)
             .padding()
             
-            Button(action: {
-                viewModel.change(sortOption: .byConference)
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text(L10n.SortingView.byConference)
-            })
+            sortButton(sortOption: .byConference)
             .padding()
             
         }.padding()
     }
+    
+    // MARK: - Private
+    
+    private func sortButton(sortOption: SortOption) -> some View {
+        // TODO: Use localized with "@" instead of hardcoded String
+        Button("Sort by \(sortOption.title.capitalized)") {
+            viewModel.change(sortOption: sortOption)
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
 }
 
 struct TeamsView_Previews: PreviewProvider {
