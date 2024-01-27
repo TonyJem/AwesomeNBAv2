@@ -7,13 +7,13 @@ struct SortingView: View {
     
     var body: some View {
         VStack {
-            sortButton(sortOption: .byName)
+            sortButton(.byName)
             .padding()
             
-            sortButton(sortOption: .byCity)
+            sortButton(.byCity)
             .padding()
             
-            sortButton(sortOption: .byConference)
+            sortButton(.byConference)
             .padding()
             
         }.padding()
@@ -21,7 +21,7 @@ struct SortingView: View {
     
     // MARK: - Private
     
-    private func sortButton(sortOption: SortOption) -> some View {
+    private func sortButton(_ sortOption: SortOption) -> some View {
         // TODO: Use localized with "@" instead of hardcoded String
         Button("Sort by \(sortOption.title.capitalized)") {
             viewModel.change(sortOption: sortOption)
