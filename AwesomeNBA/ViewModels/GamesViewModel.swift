@@ -4,16 +4,16 @@ import Foundation
 final class GamesViewModel: ObservableObject {
     @Published var games: [Game] = []
     
-    private var currentPage = 0
-    
+    private let networkService: NetworkServiceProtocol
     private let urlService: URLServiceProtocol
     
-    // TODO: Inject it in init as a dependecy
-    private let networkService = NetworkService()
+    private var currentPage = 0
     
     init(
+        networkService: NetworkServiceProtocol,
         urlService: URLServiceProtocol
     ) {
+        self.networkService = networkService
         self.urlService = urlService
     }
     

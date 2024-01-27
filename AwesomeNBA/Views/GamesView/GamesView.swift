@@ -15,6 +15,7 @@ struct GamesView: View {
         self.serviceProvider = serviceProvider
         
         _viewModel = StateObject(wrappedValue: GamesViewModel(
+            networkService: serviceProvider.networkService,
             urlService: serviceProvider.urlService
         ))
     }
