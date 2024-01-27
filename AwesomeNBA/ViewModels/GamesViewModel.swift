@@ -5,39 +5,44 @@ final class GamesViewModel: ObservableObject {
     
     @Published var games: [Game] = []
     
+    let team: Team
+    
     private let networkService: NetworkServiceProtocol
     private let urlService: URLServiceProtocol
     
     private var currentPage = 0
     
     init(
+        team: Team,
         networkService: NetworkServiceProtocol,
         urlService: URLServiceProtocol
     ) {
+        self.team = team
         self.networkService = networkService
         self.urlService = urlService
+        loadGames()
     }
     
     // MARK: - Public
     
-    func loadData(by teamId: Int) {
+    func loadGames() {
         Task {
-            await fetchGames(by: teamId)
+            await fetchGames()
         }
     }
     
-    func refreshData(for teamId: Int) {
+    func refreshData() {
         games.removeAll()
         currentPage = 0
-        loadData(by: teamId)
+        loadGames()
     }
     
     // MARK: - Private
     
-    private func fetchGames(by teamId: Int) async {
+    private func fetchGames() async {
         currentPage += 1
         let components = urlService.createURLComponents(
-            endpoint: EndPoint.getGames(teamId: teamId, page: currentPage)
+            endpoint: EndPoint.getGames(teamId: team.id, page: currentPage)
         )
         guard let payload: GamesPayload = await networkService.downloadData(components: components) else {
             return

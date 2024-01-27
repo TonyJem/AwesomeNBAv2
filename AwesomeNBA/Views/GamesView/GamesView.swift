@@ -4,17 +4,16 @@ struct GamesView: View {
     
     @StateObject private var viewModel: GamesViewModel
     
-    private let team: Team
     private let serviceProvider: ServiceProviderProtocol
     
     init(
         team: Team,
         serviceProvider: ServiceProviderProtocol
     ) {
-        self.team = team
         self.serviceProvider = serviceProvider
         
         _viewModel = StateObject(wrappedValue: GamesViewModel(
+            team: team,
             networkService: serviceProvider.networkService,
             urlService: serviceProvider.urlService
         ))
@@ -29,25 +28,20 @@ struct GamesView: View {
                 GamesViewCell(game: game)
                     .onAppear {
                         if game == viewModel.games.last {
-                            viewModel.loadData(by: team.id)
+                            viewModel.loadGames()
                         }
                     }
             }
             .listStyle(.inset)
             .refreshable {
-                viewModel.refreshData(for: team.id)
+                viewModel.refreshData()
             }
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text(team.fullName)
+                Text(viewModel.team.fullName)
                     .foregroundColor(Color.black)
                     .fontWeight(.bold)
-            }
-        }
-        .onAppear {
-            if viewModel.games.isEmpty {
-                viewModel.loadData(by: team.id)
             }
         }
     }
