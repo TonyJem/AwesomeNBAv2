@@ -9,6 +9,9 @@ final class GamesViewModel: ObservableObject {
     private let urlService: URLServiceProtocol
     private let networkServiceWithAlamofire: NetworkServiceWithAlamofireProtocol
     
+    // TODO: Inject it in init as a dependecy
+    private let networkService = NetworkService()
+    
     init(
         urlService: URLServiceProtocol,
         networkServiceWithAlamofire: NetworkServiceWithAlamofireProtocol
@@ -20,7 +23,9 @@ final class GamesViewModel: ObservableObject {
     // MARK: - Public
     
     func loadData(by teamId: Int) {
-        fetchGamesWithAlamofire(by: teamId)
+        Task {
+            await fetchGames(by: teamId)
+        }
     }
     
     func refreshData(for teamId: Int) {
@@ -31,21 +36,15 @@ final class GamesViewModel: ObservableObject {
     
     // MARK: - Private
     
-    private func fetchGamesWithAlamofire(by teamId: Int) {
+    private func fetchGames(by teamId: Int) async {
         currentPage += 1
         let components = urlService.createURLComponents(
             endpoint: EndPoint.getGames(teamId: teamId, page: currentPage)
         )
-        
-        networkServiceWithAlamofire.downloadGames(components: components) { [weak self] result in
-            switch result {
-            case .success(let payload):
-                self?.games.append(contentsOf: payload.games)
-            case .failure(let error):
-                print("🔴 Error: \(error)")
-            }
+        guard let payload: GamesPayload = await networkService.downloadData(components: components) else {
+            return
         }
-        
+        games.append(contentsOf: payload.games)
     }
     
 }
