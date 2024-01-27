@@ -19,7 +19,7 @@ struct AwesomeNBAApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(serviceProvider: serviceProvider)
+            MainView(serviceProvider: serviceProvider)
         }
     }
 }

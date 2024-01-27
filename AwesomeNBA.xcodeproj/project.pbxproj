@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C24D54F52B517FFB006B38EC /* AwesomeNBAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D54F42B517FFB006B38EC /* AwesomeNBAApp.swift */; };
-		C24D54F72B517FFB006B38EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D54F62B517FFB006B38EC /* ContentView.swift */; };
 		C24D54F92B517FFD006B38EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C24D54F82B517FFD006B38EC /* Assets.xcassets */; };
 		C24D54FC2B517FFD006B38EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C24D54FB2B517FFD006B38EC /* Preview Assets.xcassets */; };
 		C24D55032B518082006B38EC /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D55022B518082006B38EC /* TeamsView.swift */; };
@@ -24,13 +23,14 @@
 		C2A181D42B5D5530009F2046 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A181D32B5D5530009F2046 /* EndPoint.swift */; };
 		C2A1821C2B60EDEB009F2046 /* AwesomeNBA_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1821B2B60EDEB009F2046 /* AwesomeNBA_Tests.swift */; };
 		C2A182232B60EE6F009F2046 /* URLService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A182222B60EE6F009F2046 /* URLService_Tests.swift */; };
+		C2C8483F2B64ED5200758624 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8483E2B64ED5200758624 /* MainView.swift */; };
 		C2CA00102B57E9AC00052360 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C2CA000F2B57E9AC00052360 /* Alamofire */; };
 		C2CA00122B57EABE00052360 /* NetworkServiceWithAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA00112B57EABE00052360 /* NetworkServiceWithAlamofire.swift */; };
 		C2CAFF8F2B54086600052360 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF8E2B54086600052360 /* NetworkError.swift */; };
 		C2CAFF922B540AA800052360 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2CAFF912B540AA800052360 /* Localizable.strings */; };
 		C2CAFF942B540B1500052360 /* LocalizedTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF932B540B1500052360 /* LocalizedTranslations.swift */; };
 		C2CAFF972B540B8700052360 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF962B540B8700052360 /* String.swift */; };
-		C2CAFF9A2B540D6200052360 /* ContentView.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF992B540D6200052360 /* ContentView.Localized.swift */; };
+		C2CAFF9A2B540D6200052360 /* MainView.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF992B540D6200052360 /* MainView.Localized.swift */; };
 		C2CAFF9D2B540F4600052360 /* TeamsView.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF9C2B540F4600052360 /* TeamsView.Localized.swift */; };
 		C2CAFF9F2B54137B00052360 /* SortOption.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFF9E2B54137B00052360 /* SortOption.Localized.swift */; };
 		C2CAFFA12B5415AC00052360 /* SortingView.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CAFFA02B5415AC00052360 /* SortingView.Localized.swift */; };
@@ -60,7 +60,6 @@
 /* Begin PBXFileReference section */
 		C24D54F12B517FFB006B38EC /* AwesomeNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24D54F42B517FFB006B38EC /* AwesomeNBAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeNBAApp.swift; sourceTree = "<group>"; };
-		C24D54F62B517FFB006B38EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C24D54F82B517FFD006B38EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C24D54FB2B517FFD006B38EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C24D55022B518082006B38EC /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
@@ -77,12 +76,13 @@
 		C2A182192B60EDEB009F2046 /* AwesomeNBA_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeNBA_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A1821B2B60EDEB009F2046 /* AwesomeNBA_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeNBA_Tests.swift; sourceTree = "<group>"; };
 		C2A182222B60EE6F009F2046 /* URLService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLService_Tests.swift; sourceTree = "<group>"; };
+		C2C8483E2B64ED5200758624 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C2CA00112B57EABE00052360 /* NetworkServiceWithAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceWithAlamofire.swift; sourceTree = "<group>"; };
 		C2CAFF8E2B54086600052360 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C2CAFF912B540AA800052360 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C2CAFF932B540B1500052360 /* LocalizedTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTranslations.swift; sourceTree = "<group>"; };
 		C2CAFF962B540B8700052360 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		C2CAFF992B540D6200052360 /* ContentView.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.Localized.swift; sourceTree = "<group>"; };
+		C2CAFF992B540D6200052360 /* MainView.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.Localized.swift; sourceTree = "<group>"; };
 		C2CAFF9C2B540F4600052360 /* TeamsView.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.Localized.swift; sourceTree = "<group>"; };
 		C2CAFF9E2B54137B00052360 /* SortOption.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.Localized.swift; sourceTree = "<group>"; };
 		C2CAFFA02B5415AC00052360 /* SortingView.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingView.Localized.swift; sourceTree = "<group>"; };
@@ -245,8 +245,8 @@
 		C2CAFF982B540D0D00052360 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				C24D54F62B517FFB006B38EC /* ContentView.swift */,
-				C2CAFF992B540D6200052360 /* ContentView.Localized.swift */,
+				C2CAFF992B540D6200052360 /* MainView.Localized.swift */,
+				C2C8483E2B64ED5200758624 /* MainView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -402,7 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C24D55092B5180CF006B38EC /* Team.swift in Sources */,
-				C2CAFF9A2B540D6200052360 /* ContentView.Localized.swift in Sources */,
+				C2CAFF9A2B540D6200052360 /* MainView.Localized.swift in Sources */,
 				C2CAFFD42B55412600052360 /* ServiceProvider.swift in Sources */,
 				C24D55112B5199FF006B38EC /* Game.swift in Sources */,
 				C2CAFF9F2B54137B00052360 /* SortOption.Localized.swift in Sources */,
@@ -410,6 +410,7 @@
 				C2CAFF8F2B54086600052360 /* NetworkError.swift in Sources */,
 				C2CAFFA52B5417AC00052360 /* PlayersView.Localized.swift in Sources */,
 				C2CAFFA82B541BAF00052360 /* Images.swift in Sources */,
+				C2C8483F2B64ED5200758624 /* MainView.swift in Sources */,
 				C2CA00122B57EABE00052360 /* NetworkServiceWithAlamofire.swift in Sources */,
 				C24D55172B51A305006B38EC /* PlayersViewModel.swift in Sources */,
 				C24D55192B51A361006B38EC /* Player.swift in Sources */,
@@ -423,7 +424,6 @@
 				C2CAFF9D2B540F4600052360 /* TeamsView.Localized.swift in Sources */,
 				C2CAFFB42B54505000052360 /* URLService.swift in Sources */,
 				C2CAFFA12B5415AC00052360 /* SortingView.Localized.swift in Sources */,
-				C24D54F72B517FFB006B38EC /* ContentView.swift in Sources */,
 				C2A181D42B5D5530009F2046 /* EndPoint.swift in Sources */,
 				C24D54F52B517FFB006B38EC /* AwesomeNBAApp.swift in Sources */,
 				C2CAFF972B540B8700052360 /* String.swift in Sources */,

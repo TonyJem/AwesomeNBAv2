@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     
     private let serviceProvider: ServiceProviderProtocol
     
@@ -36,7 +36,7 @@ struct ContentView: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     
     static let networkService = NetworkService()
     static let urlService = URLService()
@@ -49,6 +49,6 @@ struct ContentView_Previews: PreviewProvider {
     )
     
     static var previews: some View {
-        ContentView(serviceProvider: serviceProvider)
+        MainView(serviceProvider: serviceProvider)
     }
 }
