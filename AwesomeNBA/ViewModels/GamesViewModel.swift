@@ -2,6 +2,7 @@ import Foundation
 
 @MainActor
 final class GamesViewModel: ObservableObject {
+    
     @Published var games: [Game] = []
     
     private let networkService: NetworkServiceProtocol
