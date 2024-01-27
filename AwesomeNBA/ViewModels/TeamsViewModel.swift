@@ -21,6 +21,7 @@ final class TeamsViewModel: ObservableObject {
     ) {
         self.networkService = networkService
         self.urlService = urlService
+        loadSortedTeams()
     }
     
     // MARK: - Public

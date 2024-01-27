@@ -41,11 +41,6 @@ struct TeamsView: View {
             }
         }
         .navigationTitle(L10n.TeamsView.navigationTitle)
-        .onAppear {
-            if viewModel.teams.isEmpty {
-                viewModel.loadSortedTeams()
-            }
-        }
         .sheet(isPresented: $showSortingView, content: { SortingView() } )
     }
     

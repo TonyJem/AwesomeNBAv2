@@ -29,7 +29,7 @@ struct PlayersView: View {
                 )
                 .onAppear {
                     if player == viewModel.players.last {
-                        viewModel.loadData(searchText: searchText)
+                        viewModel.loadPlayers(searchText: searchText)
                     }
                 }
             }
@@ -39,11 +39,6 @@ struct PlayersView: View {
             }
         }
         .navigationTitle(L10n.PlayersView.navigationTitle)
-        .onAppear {
-            if viewModel.players.isEmpty {
-                viewModel.loadData(searchText: searchText)
-            }
-        }
         .searchable(text: $searchText)
         .onChange(of: searchText) { _ in
             viewModel.refreshData(searchText: searchText)

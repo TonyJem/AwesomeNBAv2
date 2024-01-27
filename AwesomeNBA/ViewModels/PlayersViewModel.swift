@@ -15,11 +15,12 @@ final class PlayersViewModel: ObservableObject {
     ) {
         self.networkService = networkService
         self.urlService = urlService
+        loadPlayers()
     }
     
     // MARK: - Public
     
-    func loadData(searchText: String) {
+    func loadPlayers(searchText: String = "") {
         Task {
             await fetchPlayers(searchText: searchText)
         }
@@ -28,7 +29,7 @@ final class PlayersViewModel: ObservableObject {
     func refreshData(searchText: String) {
         currentPage = 0
         players.removeAll()
-        loadData(searchText: searchText)
+        loadPlayers(searchText: searchText)
     }
     
     // MARK: - Private
