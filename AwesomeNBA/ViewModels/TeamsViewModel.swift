@@ -4,7 +4,13 @@ import Foundation
 final class TeamsViewModel: ObservableObject {
     
     @Published var teams: [Team] = []
-    @Published var sortOption: SortOption = .byName
+    
+    @Published var sortOption: SortOption = .byName {
+        didSet {
+            guard oldValue != sortOption else { return }
+            sortTeams()
+        }
+    }
     
     private let networkService: NetworkServiceProtocol
     private let urlService: URLServiceProtocol
@@ -29,6 +35,10 @@ final class TeamsViewModel: ObservableObject {
     func refreshData() {
         teams.removeAll()
         loadSortedTeams()
+    }
+    
+    func change(sortOption: SortOption) {
+        self.sortOption = sortOption
     }
     
     // MARK: - Private

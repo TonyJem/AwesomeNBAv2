@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TeamsView: View {
     
-    @StateObject private var viewModel: TeamsViewModel
+    @EnvironmentObject var viewModel: TeamsViewModel
     
     @State private var showSortingView = false
     
@@ -10,11 +10,6 @@ struct TeamsView: View {
     
     init(serviceProvider: ServiceProviderProtocol) {
         self.serviceProvider = serviceProvider
-        
-        _viewModel = StateObject(wrappedValue: TeamsViewModel(
-            networkService: serviceProvider.networkService,
-            urlService: serviceProvider.urlService
-        ))
     }
     
     var body: some View {
@@ -52,9 +47,7 @@ struct TeamsView: View {
                 viewModel.loadSortedTeams()
             }
         }
-        .sheet(isPresented: $showSortingView, content: {
-            SortingView(sortOption: viewModel.sortOption)
-        })
+        .sheet(isPresented: $showSortingView, content: { SortingView() } )
     }
     
     // MARK: - Private

@@ -2,10 +2,17 @@ import SwiftUI
 
 struct MainView: View {
     
+    @StateObject var teamsViewModel: TeamsViewModel
+    
     private let serviceProvider: ServiceProviderProtocol
     
     init(serviceProvider: ServiceProviderProtocol) {
         self.serviceProvider = serviceProvider
+        
+        _teamsViewModel = StateObject(wrappedValue: TeamsViewModel(
+            networkService: serviceProvider.networkService,
+            urlService: serviceProvider.urlService
+        ))
     }
     
     var body: some View {
@@ -14,6 +21,7 @@ struct MainView: View {
             NavigationView {
                 TeamsView(serviceProvider: serviceProvider)
             }
+            .environmentObject(teamsViewModel)
             .tabItem {
                 Label(
                     L10n.TabView.homeTabTitle,

@@ -1,15 +1,14 @@
 import SwiftUI
 
 struct SortingView: View {
-    @Environment(\.presentationMode) var presentationMode
     
-    var sortOption: SortOption
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewModel: TeamsViewModel
     
     var body: some View {
-        
         VStack {
             Button(action: {
-                //                sortOption = .byName
+                viewModel.change(sortOption: .byName)
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text(L10n.SortingView.byName)
@@ -17,7 +16,7 @@ struct SortingView: View {
             .padding()
             
             Button(action: {
-                //                sortOption = .byCity
+                viewModel.change(sortOption: .byCity)
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text(L10n.SortingView.byCity)
@@ -25,7 +24,7 @@ struct SortingView: View {
             .padding()
             
             Button(action: {
-                //                sortOption = .byConference
+                viewModel.change(sortOption: .byConference)
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text(L10n.SortingView.byConference)
