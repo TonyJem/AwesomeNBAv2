@@ -40,14 +40,14 @@ final class GamesViewModel: ObservableObject {
     // MARK: - Private
     
     private func fetchGames() async {
-        currentPage += 1
-        let components = urlService.createURLComponents(
-            endpoint: EndPoint.getGames(teamId: team.id, page: currentPage)
-        )
-        guard let payload: GamesPayload = await networkService.fetchData(components: components) else {
-            return
-        }
-        games.append(contentsOf: payload.games)
+//        currentPage += 1
+//        let components = urlService.createURLComponents(
+//            endpoint: EndPoint.getGames(teamId: team.id, page: currentPage)
+//        )
+//        guard let payload: GamesPayload = await networkService.fetchData(components: components) else {
+//            return
+//        }
+//        games.append(contentsOf: payload.games)
     }
     
 }

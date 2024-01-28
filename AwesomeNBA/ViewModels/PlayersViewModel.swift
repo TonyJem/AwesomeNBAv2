@@ -36,18 +36,18 @@ final class PlayersViewModel: ObservableObject {
     // MARK: - Private
 
     private func fetchPlayers(searchText: String) async {
-        currentPage += 1
-        
-        let components = urlService.createURLComponents(
-            endpoint: EndPoint.getPlayers(
-                searchText: searchText,
-                page: currentPage
-            ))
-        
-        guard let payload: PlayersPayload = await networkService.fetchData(components: components) else {
-            return
-        }
-        players.append(contentsOf: payload.players)
+//        currentPage += 1
+//        
+//        let components = urlService.createURLComponents(
+//            endpoint: EndPoint.getPlayers(
+//                searchText: searchText,
+//                page: currentPage
+//            ))
+//        
+//        guard let payload: PlayersPayload = await networkService.fetchData(components: components) else {
+//            return
+//        }
+//        players.append(contentsOf: payload.players)
     }
     
 }

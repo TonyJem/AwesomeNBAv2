@@ -28,7 +28,7 @@ final class TeamsViewModel: ObservableObject {
     
     func refreshTeams() {
         Task {
-            await fethAllTeams()
+            await getTeams()
             sortTeams()
         }
     }
@@ -39,12 +39,18 @@ final class TeamsViewModel: ObservableObject {
     
     // MARK: - Private
     
-    private func fethAllTeams() async {
+    private func getTeams() async {
         let components = urlService.createURLComponents(endpoint: EndPoint.getTeams)
-        guard let payload: TeamsPayload = await networkService.fetchData(components: components) else {
-            return
+        do {
+            let payload: TeamsPayload = try await networkService.fetchData(components: components)
+            teams = payload.teams
+        } catch {
+            if let error = error as? NetworkError {
+                print(error.description)
+            } else {
+                print("Unexpected fetch error: \(error.localizedDescription)")
+            }
         }
-        teams = payload.teams
     }
     
     private func sortTeams() {

@@ -7,9 +7,9 @@ enum NetworkError: Error {
     // Should we add more or there are some redundant errors?
     case invalidUrl
     case invalidRequest
-    case badResponse
+    case invalidResponse
     case wrongStatus
-    case failedToDecodeResponse
+    case failedToDecodeData
     
     var description: String {
         switch self {
@@ -17,11 +17,11 @@ enum NetworkError: Error {
             return "🔴 There was an error creating the URL"
         case .invalidRequest:
             return "🔴🔴 invalidRequest"
-        case .badResponse:
+        case .invalidResponse:
             return "🔴🔴 Did not get a valid response"
         case .wrongStatus:
             return "🔴🔴🔴 Did not get a 2xx status code from the response"
-        case .failedToDecodeResponse:
+        case .failedToDecodeData:
             return "🔴🔴🔴🔴 Failed to decode response into the given type"
         }
     }
