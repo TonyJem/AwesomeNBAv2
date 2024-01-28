@@ -2,13 +2,13 @@ import Foundation
 
 protocol NetworkServiceProtocol: Codable {
     
-    func downloadData<T: Codable>(components: URLComponents) async -> T?
+    func fetchData<T: Codable>(components: URLComponents) async -> T?
     
 }
 
 final class NetworkService: NetworkServiceProtocol {
     
-    func downloadData<T: Codable>(components: URLComponents) async -> T? {
+    func fetchData<T: Codable>(components: URLComponents) async -> T? {
         do {
             guard let url = components.url else { throw NetworkError.badUrl }
             let (data, response) = try await URLSession.shared.data(from: url)

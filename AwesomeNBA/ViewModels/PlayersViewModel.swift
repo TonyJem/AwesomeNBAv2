@@ -44,7 +44,7 @@ final class PlayersViewModel: ObservableObject {
                 page: currentPage
             ))
         
-        guard let payload: PlayersPayload = await networkService.downloadData(components: components) else {
+        guard let payload: PlayersPayload = await networkService.fetchData(components: components) else {
             return
         }
         players.append(contentsOf: payload.players)

@@ -41,7 +41,7 @@ final class TeamsViewModel: ObservableObject {
     
     private func fethAllTeams() async {
         let components = urlService.createURLComponents(endpoint: EndPoint.getTeams)
-        guard let payload: TeamsPayload = await networkService.downloadData(components: components) else {
+        guard let payload: TeamsPayload = await networkService.fetchData(components: components) else {
             return
         }
         teams = payload.teams
