@@ -4,11 +4,9 @@ extension LocalizedTranslations {
     
     enum SortingView {
         
-        static let byName = "SortingView.byName.Button.Title".localized
-        
-        static let byCity = "SortingView.byCity.Button.Title".localized
-        
-        static let byConference = "SortingView.byConference.Button.Title".localized
+        static func getButtonTitle(from title: String) -> String {
+            return title.localized(with: "SortingView.SortBy.Prefix".localized)
+        }
         
     }
     

@@ -18,8 +18,7 @@ struct SortingView: View {
     // MARK: - Private
     
     private func sortButton(with sortOption: SortOption) -> some View {
-        // TODO: Use localized with "@" instead of hardcoded String
-        Button("Sort by \(sortOption.title.capitalized)") {
+        Button(L10n.SortingView.getButtonTitle(from: sortOption.title)) {
             viewModel.change(sortOption: sortOption)
             presentationMode.wrappedValue.dismiss()
         }
