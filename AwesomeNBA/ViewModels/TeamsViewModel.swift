@@ -8,7 +8,7 @@ final class TeamsViewModel: ObservableObject {
     @Published var sortOption: SortOption = .byName {
         didSet {
             guard oldValue != sortOption else { return }
-            sortTeams()
+            teams = sorted(teams, by: sortOption)
         }
     }
     
@@ -28,8 +28,7 @@ final class TeamsViewModel: ObservableObject {
     
     func loadTeams() {
         Task {
-            await getTeams()
-            sortTeams()
+            await getSortedTeams()
         }
     }
     
@@ -39,11 +38,11 @@ final class TeamsViewModel: ObservableObject {
     
     // MARK: - Private
     
-    private func getTeams() async {
+    private func getSortedTeams() async {
         let components = urlService.createURLComponents(endpoint: EndPoint.teams)
         do {
             let payload: TeamsPayload = try await networkService.fetchData(components: components)
-            teams = payload.teams
+            teams = sorted(payload.teams, by: sortOption)
         } catch {
             if let error = error as? NetworkError {
                 print(error.description)
@@ -53,19 +52,20 @@ final class TeamsViewModel: ObservableObject {
         }
     }
     
-    private func sortTeams() {
+    private func sorted(_ teams: [Team], by sortOption: SortOption) -> [Team] {
         switch sortOption {
         case .byName:
-            sortByName()
+            return sortedByName(teams)
         case .byCity:
-            sortByCity()
+            return sortedByCity(teams)
         case .byConference:
-            sortByConference()
+            return sortedByConference(teams)
         }
     }
     
-    private func sortByName() {
-        teams.sort {
+    private func sortedByName(_ teams: [Team]) -> [Team] {
+        var tempTeams = teams
+        tempTeams.sort {
             if $0.fullName.lowercased() != $1.fullName.lowercased() {
                 return $0.fullName.lowercased() < $1.fullName.lowercased()
             } else {
@@ -76,10 +76,12 @@ final class TeamsViewModel: ObservableObject {
                 }
             }
         }
+        return tempTeams
     }
     
-    private func sortByCity() {
-        teams.sort {
+    private func sortedByCity(_ teams: [Team]) -> [Team] {
+        var tempTeams = teams
+        tempTeams.sort {
             if $0.city.lowercased() != $1.city.lowercased() {
                 return $0.city.lowercased() < $1.city.lowercased()
             } else {
@@ -90,10 +92,12 @@ final class TeamsViewModel: ObservableObject {
                 }
             }
         }
+        return tempTeams
     }
     
-    private func sortByConference() {
-        teams.sort {
+    private func sortedByConference(_ teams: [Team]) -> [Team] {
+        var tempTeams = teams
+        tempTeams.sort {
             if $0.conference.rawValue.lowercased() != $1.conference.rawValue.lowercased() {
                 return $0.conference.rawValue.lowercased() < $1.conference.rawValue.lowercased()
             } else {
@@ -104,6 +108,7 @@ final class TeamsViewModel: ObservableObject {
                 }
             }
         }
+        return tempTeams
     }
     
 }
