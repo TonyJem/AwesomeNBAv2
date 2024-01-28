@@ -40,7 +40,7 @@ final class TeamsViewModel: ObservableObject {
     // MARK: - Private
     
     private func getTeams() async {
-        let components = urlService.createURLComponents(endpoint: EndPoint.getTeams)
+        let components = urlService.createURLComponents(endpoint: EndPoint.teams)
         do {
             let payload: TeamsPayload = try await networkService.fetchData(components: components)
             teams = payload.teams

@@ -38,7 +38,7 @@ final class PlayersViewModel: ObservableObject {
     private func getPlayers(searchText: String) async {
         currentPage += 1
         let components = urlService.createURLComponents(
-            endpoint: EndPoint.getPlayers(
+            endpoint: EndPoint.players(
                 searchText: searchText,
                 page: currentPage
             ))

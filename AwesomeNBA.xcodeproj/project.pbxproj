@@ -167,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				C2CAFFD32B55412600052360 /* ServiceProvider.swift */,
-				C2A181D32B5D5530009F2046 /* EndPoint.swift */,
 				C2A182142B60EB19009F2046 /* URLService */,
 				C24D550A2B5180E2006B38EC /* NetworkService.swift */,
 				C2CAFF8E2B54086600052360 /* NetworkError.swift */,
@@ -210,6 +209,7 @@
 		C2A182142B60EB19009F2046 /* URLService */ = {
 			isa = PBXGroup;
 			children = (
+				C2A181D32B5D5530009F2046 /* EndPoint.swift */,
 				C2CAFFB32B54505000052360 /* URLService.swift */,
 				C2A182222B60EE6F009F2046 /* URLService_Tests.swift */,
 			);

@@ -5,8 +5,8 @@ enum HTTPScheme: String {
     case https
 }
 
-/// The EndPointProtocol protocol allows us to separate the task of constructing a URL,
-/// its parameters from the act of executing the URL request and parsing the response.
+/// The EndPointProtocol protocol allows us to separate the task of constructing a URL and,
+/// it's parameters from the act of executing the URL request and parsing the response.
 protocol EndPointProtocol {
     
 /// .http  or .https
@@ -25,52 +25,52 @@ var queryItems: [URLQueryItem] { get }
 
 enum EndPoint: EndPointProtocol {
     
-    case getTeams
-    case getGames(teamId: Int, page: Int)
-    case getPlayers(searchText: String, page: Int)
+    case teams
+    case games(teamId: Int, page: Int)
+    case players(searchText: String, page: Int)
     
     var scheme: HTTPScheme {
         switch self {
-        case .getTeams, .getGames, .getPlayers:
+        case .teams, .games, .players:
             return .https
         }
     }
     
     var host: String {
         switch self {
-        case .getTeams, .getGames, .getPlayers:
+        case .teams, .games, .players:
             return "www.balldontlie.io"
         }
     }
     
     var path: String {
         switch self {
-        case .getTeams:
+        case .teams:
             return "/api/v1/teams"
-        case .getGames:
+        case .games:
             return "/api/v1/games"
-        case .getPlayers:
+        case .players:
             return "/api/v1/players"
         }
     }
     
     var queryItems: [URLQueryItem] {
         switch self {
-        case .getTeams:
+        case .teams:
             let params = [
                 URLQueryItem(name: "page", value: "1"),
                 URLQueryItem(name: "per_page", value: "100")
             ]
             return params
             
-        case .getGames(let teamId, let page):
+        case .games(let teamId, let page):
             let params = [
                 URLQueryItem(name: "team_ids[]", value: String(teamId)),
                 URLQueryItem(name: "page", value: String(page))
             ]
             return params
             
-        case .getPlayers(let searchText, let page):
+        case .players(let searchText, let page):
             let params = [
                 URLQueryItem(name: "search", value: searchText),
                 URLQueryItem(name: "page", value: String(page))
