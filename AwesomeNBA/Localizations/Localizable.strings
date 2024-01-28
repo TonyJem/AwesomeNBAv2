@@ -28,6 +28,9 @@
 "SortOption.byConference.Title" = "Conference";
 
 // MARK: - SortingView
+
+// TODO: Use localized with "@" instead of hardcoded String
+// After doing this, need to re-check and remove all redundant strings
 "SortingView.byName.Button.Title" = "Sort by Name";
 "SortingView.byCity.Button.Title" = "Sort by City";
 "SortingView.byConference.Button.Title" = "Sort by Conference";

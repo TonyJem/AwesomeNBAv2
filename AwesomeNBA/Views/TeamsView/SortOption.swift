@@ -1,9 +1,14 @@
 import Foundation
 
-enum SortOption {
+enum SortOption: String, CaseIterable, Identifiable {
+    
     case byName
     case byCity
     case byConference
+    
+    var id: String {
+        self.rawValue
+    }
     
     var title: String {
         switch self {
