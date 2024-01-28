@@ -21,12 +21,12 @@ final class TeamsViewModel: ObservableObject {
     ) {
         self.networkService = networkService
         self.urlService = urlService
-        refreshTeams()
+        loadTeams()
     }
     
     // MARK: - Public
     
-    func refreshTeams() {
+    func loadTeams() {
         Task {
             await getTeams()
             sortTeams()

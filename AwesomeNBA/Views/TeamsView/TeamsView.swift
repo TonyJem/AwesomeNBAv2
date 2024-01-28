@@ -30,7 +30,7 @@ struct TeamsView: View {
             }
             .listStyle(.inset)
             .refreshable {
-                viewModel.refreshTeams()
+                viewModel.loadTeams()
             }
         }
         .toolbar {

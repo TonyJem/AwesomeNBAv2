@@ -168,8 +168,7 @@
 			children = (
 				C2CAFFD32B55412600052360 /* ServiceProvider.swift */,
 				C2A182142B60EB19009F2046 /* URLService */,
-				C24D550A2B5180E2006B38EC /* NetworkService.swift */,
-				C2CAFF8E2B54086600052360 /* NetworkError.swift */,
+				C2C848422B66903C00758624 /* NetworkService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,6 +221,15 @@
 				C2A1821B2B60EDEB009F2046 /* AwesomeNBA_Tests.swift */,
 			);
 			path = AwesomeNBA_Tests;
+			sourceTree = "<group>";
+		};
+		C2C848422B66903C00758624 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				C24D550A2B5180E2006B38EC /* NetworkService.swift */,
+				C2CAFF8E2B54086600052360 /* NetworkError.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		C2CAFF902B540A4C00052360 /* Localizations */ = {
