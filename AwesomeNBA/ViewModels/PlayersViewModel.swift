@@ -23,7 +23,7 @@ final class PlayersViewModel: ObservableObject {
     
     func loadPlayers(searchText: String = "") {
         Task {
-            await fetchPlayers(searchText: searchText)
+            await getPlayers(searchText: searchText)
         }
     }
     
@@ -34,20 +34,24 @@ final class PlayersViewModel: ObservableObject {
     }
     
     // MARK: - Private
-
-    private func fetchPlayers(searchText: String) async {
+    
+    private func getPlayers(searchText: String) async {
         currentPage += 1
-        
         let components = urlService.createURLComponents(
             endpoint: EndPoint.getPlayers(
                 searchText: searchText,
                 page: currentPage
             ))
-        
-        guard let payload: PlayersPayload = await networkService.downloadData(components: components) else {
-            return
+        do {
+            let payload: PlayersPayload = try await networkService.fetchData(components: components)
+            players.append(contentsOf: payload.players)
+        } catch {
+            if let error = error as? NetworkError {
+                print(error.description)
+            } else {
+                print("Unexpected fetch error: \(error.localizedDescription)")
+            }
         }
-        players.append(contentsOf: payload.players)
     }
     
 }
