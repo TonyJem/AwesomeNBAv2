@@ -7,9 +7,9 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
     
-    func localized(with text: String) -> String {
-        return NSLocalizedString(text, comment: "")
-            .replacingOccurrences(of: "/@", with: self)
+    func formatted(text: String) -> String {
+        let tempStr = String(format: self, text)
+        return tempStr
     }
 
 }

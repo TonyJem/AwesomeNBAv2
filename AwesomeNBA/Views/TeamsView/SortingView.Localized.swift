@@ -4,8 +4,10 @@ extension LocalizedTranslations {
     
     enum SortingView {
         
-        static func getButtonTitle(from title: String) -> String {
-            return title.localized(with: "SortingView.SortBy.Prefix".localized)
+        private static let prefix = "SortingView.SortBy.Prefix".localized
+        
+        static func getButtonTitle(with text: String) -> String {
+            return prefix.formatted(text: text)
         }
         
     }

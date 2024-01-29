@@ -28,4 +28,4 @@
 "SortOption.byConference.Title" = "Conference";
 
 // MARK: - SortingView
-"SortingView.SortBy.Prefix" = "Sort by /@";
+"SortingView.SortBy.Prefix" = "Sort by %@";

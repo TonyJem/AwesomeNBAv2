@@ -18,7 +18,7 @@ struct SortingView: View {
     // MARK: - Private
     
     private func sortButton(with sortOption: SortOption) -> some View {
-        Button(L10n.SortingView.getButtonTitle(from: sortOption.title)) {
+        Button(L10n.SortingView.getButtonTitle(with: sortOption.title)) {
             viewModel.change(sortOption: sortOption)
             presentationMode.wrappedValue.dismiss()
         }
