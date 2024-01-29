@@ -29,7 +29,6 @@ final class PlayersViewModel: ObservableObject {
     
     func refreshData(searchText: String) {
         currentPage = 0
-        players.removeAll()
         loadPlayers(searchText: searchText)
     }
     
@@ -44,7 +43,11 @@ final class PlayersViewModel: ObservableObject {
             ))
         do {
             let payload: PlayersPayload = try await networkService.fetchData(components: components)
-            players.append(contentsOf: payload.players)
+            if currentPage == 1 {
+                players = payload.players
+            } else {
+                players.append(contentsOf: payload.players)
+            }
         } catch {
             if let error = error as? NetworkError {
                 print(error.description)

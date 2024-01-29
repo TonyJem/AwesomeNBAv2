@@ -31,10 +31,7 @@ final class GamesViewModel: ObservableObject {
         }
     }
     
-    // TODO: Change remove all with inserting new fresh fetch result instead of current games
-    // Check if there are no glitch on refresh
     func refreshData() {
-        games.removeAll()
         currentPage = 0
         loadGames()
     }
@@ -48,7 +45,11 @@ final class GamesViewModel: ObservableObject {
         )
         do {
             let payload: GamesPayload = try await networkService.fetchData(components: components)
-            games.append(contentsOf: payload.games)
+            if currentPage == 1 {
+                games = payload.games
+            } else {
+                games.append(contentsOf: payload.games)
+            }
         } catch {
             if let error = error as? NetworkError {
                 print(error.description)
